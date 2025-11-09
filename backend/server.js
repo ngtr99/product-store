@@ -13,11 +13,6 @@ const PORT = process.env.PORT || 5001;
 app.use(express.json());
 app.use('/api/products', router);
 
-app.get("/api/health", (_req, res) => {
-  res.json({ ok: true });
-});
-
-
 // if (process.env.NODE_ENV === 'production') {
 //     app.use(express.static(path.join(__dirname, '/frontend/dist')));
 
