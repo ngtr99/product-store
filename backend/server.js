@@ -4,11 +4,14 @@ import dotenv from 'dotenv';
 import {connectDB} from './config/db.js';
 import router from './routes/products.route.js';
 import path from 'path';
+import cors from 'cors';
 
 dotenv.config();
 const app = express();
 const __dirname = path.resolve();
 const PORT = process.env.PORT || 5001;
+app.use(cors());
+
 //allows us to accept json data in the body
 app.use(express.json());
 app.use('/api/products', router);
